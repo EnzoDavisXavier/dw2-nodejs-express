@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
+    <a href="/">Voltar</a>
+    <br>
+    <h1 style="text-align: center;">Página de produtos</h1>
+
+    <!-- Comentário em EJS -->
+     <%@ Comentário@%>
+
+    <!-- Chamando a variável para ser exibida na página -->
+    <%= produtos %>
+
+    <!-- Percorrnedo a lista de produtos através do forEach: -->
+    <%@produtos.forEach(prouto => {@%>
+        <p>Produto: <%= produto.nome %></p>
+        <p>Marca: <%= marca.nome %></p>
+        <p>Produto: <%= produto.nome %></p>
+    <%@ }) @%>
+
+</body>
+</html>
