@@ -1,17 +1,20 @@
-import express from "express";
-const rota = express.Router()
+import express from 'express' // Importando o framwork express
 
-// ROTA DE CLIENTES
-rota.get("/clientes", (req, res) => {
-  const clientes = [
-    { nome: "Diego Max", cpf: "999.999.999-99" },
-    { nome: "Gregory Souza", cpf: "888.888.888-88" },
-    { nome: "Laura Júlia", cpf: "777.777.777-77" },
-    { nome: "Mario Takahashi", cpf: "555.555.555-55" },
-  ];
-  res.render("clientes", {
-    clientes: clientes,
-  });
-});
+// Router(): método do express para criar rotas
+const rota = express.Router();
+
+//ROTAS CLIENTES
+rota.get("/clientes", (req, res)=>{
+
+      const clientes = [
+        {nome:"Pamela Candido", cpf: "999.999.999-99"},
+        {nome:"Pamela Santos", cpf: "999.999.999-99"},
+        {nome:"Maria Eduarda", cpf: "999.999.999-99"},
+        {nome:"Andriele Pereira", cpf: "999.999.999-99"},
+      ]
+        res.render("clientes",{
+            clientes: clientes,
+        })
+})
 
 export default rota;

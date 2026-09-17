@@ -1,57 +1,50 @@
-// index.js : arquivo principal do back-end.
-// Importando o Express.js para o projeto
-// const express = require("express"); // Forma clássica (CommonJS Modules)
-import express from "express"; // Forma de importação do ES6
-const app = express(); // Criando uma instância do Express
+//index.js - Arquivo principal do back-end
 
-// Importando o COntroller de Produto
-import ProdutoController from "./controllers/ProdutoController.js"
+//Importando o express para o projeto
+//const express = require("express"); //Forma Classica(Commun JS Modules)
 
-//importando o controller de cliente
-import ClienteController from "./controllers/ClienteController.js"
+import express from 'express'; // Forma de importação do ES6
 
-//importando o controller de Servico
-import ServicoController from "./controllers/ServicoController.js"
+const app = express(); //Criando uma instância do express
 
-//importando o controller de usuario
-import UsuarioController from "./controllers/UsuarioController.js"
+// Importando o controller de Produto
 
-// Configurando o EJS
-app.set("view engine", "ejs"); // EJS renderiza as páginas do site
-// Configurando a pasta 'PUBLIC' para arquivos estáticos
-app.use(express.static("public"));
-// COnfigurando as rotas
-// Iniciando as rotas de Produto
-app.use("/", ProdutoController)
+import ProdutoController from "./controllers/ProdutoController.js";
+import ServicoController from "./controllers/ServicoController.js";
+import UsuarioController from "./controllers/UsuarioController.js";
+import ClienteController from "./controllers/ClienteController.js";
 
-// Iniciando as rotas de Cliente
-app.use("/", ClienteController)
+//Configurando o ejs
+app.set('view engine', 'ejs'); //ejs renderiza as páginas do site
 
-// Iniciando as rotas de Servico
-app.use("/", ServicoController)
+// Configurando a pasta public para arquivos estáticos
+app.use(express.static('public'));
 
-// Iniciando as rotas de Usuario
-app.use("/", UsuarioController)
+app.use(ProdutoController);
+app.use(ServicoController);
+app.use(UsuarioController);
+app.use(ClienteController);
 
+//AQUI IRÃO AS ROTAS DO SITE
+//ROTA PRINCIPAL
+//.get() -> Cria uma rota na aplicação
+app.get("/", (req,res) => {
+    res.render('index');
 
-// AQUI IRÃO AS ROTAS DO SITE:
-// .get() -> Cria uma rota na aplicação
-
-// ROTA PRINCIPAL
-app.get("/", (req, res) => {
-  res.render("index");
 });
 
-// Método do Express para iniciar o servidor back-end
-// app.listen()
-// Iniciando o servidor na porta 8080
+//Metodo do express para iniciar o servidor
+//Iniciando o servidor na porta 8080
 const port = 8080;
 app.listen(port, (error) => {
-  // Tratando erros de inicialização
-  if (error) {
-    console.log(`Ocorreu um erro ao iniciar o servidor. Erro: ${error}`);
-    // Em caso de sucesso
-  } else {
-    console.log(`Servidor iniciado com sucesso em: http://localhost:${port}`);
-  }
+    //Tratando erros de inicialização
+
+    if(error){
+        console.log(`Ocorreu um erro ao iniciar o servidor. Erro ${error}`);
+    }
+    //Em caso de sucesso
+    else{
+
+        console.log(`Servidor iniciado com sucesso em: http://localhost:${port}`);
+    }
 });

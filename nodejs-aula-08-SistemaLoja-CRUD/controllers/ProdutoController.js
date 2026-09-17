@@ -1,8 +1,11 @@
-import express from "express";
-const rota = express.Router()
+import e from 'express';
+import express from 'express';
+
+const route = express.Router();
+
 
 // ROTA PRODUTOS
-rota.get("/produtos",function(req,res){
+route.get("/produtos",function(req,res){
     const produtos = [
         {nome: "Celular Motorola E22", preco: 1200, categoria: "Eletroportáteis"},
         {nome: "Tablet Samsung", preco: 900, categoria: "Eletrônicos"},
@@ -15,4 +18,4 @@ rota.get("/produtos",function(req,res){
 
 })
 
-export default rota;
+export default route;

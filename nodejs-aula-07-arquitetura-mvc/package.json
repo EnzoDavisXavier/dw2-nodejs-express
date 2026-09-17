@@ -1,9 +1,9 @@
 {
-  "name": "nodejs-aula-04-introducao-ao-express",
+  "name": "cls",
   "version": "1.0.0",
-  "description": "Projeto inicial para aprendizagem do Node.js",
+  "description": "",
   "license": "ISC",
-  "author": "Diego Max",
+  "author": "",
   "type": "module",
   "main": "index.js",
   "scripts": {

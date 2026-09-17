@@ -1,5 +1,1 @@
-// Javascript
-
-// window.alert(
-//   "Se você está vendo este aviso, o Javascript foi importado com sucesso!",
-// );
+// alert("JS importado")

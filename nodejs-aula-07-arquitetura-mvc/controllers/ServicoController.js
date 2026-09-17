@@ -1,11 +1,12 @@
-// Importando o framework Express
-import express from "express";
-// router() :
-const rota = express.Router()
+import express from 'express' // Importando o framwork express
 
-// ROTA DE SERVIÇOS
-rota.get("/servicos", (req, res) => {
-  res.render("servicos");
-});
+// Router(): método do express para criar rotas
+const rota = express.Router();
+
+
+//ROTAS SERVIÇOS
+rota.get("/servicos", (req, res)=>{
+    res.render('servicos');
+})
 
 export default rota;

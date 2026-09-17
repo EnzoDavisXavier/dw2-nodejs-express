@@ -1,8 +1,10 @@
-import express from "express";
-const rota = express.Router()
+import express from 'express';
+
+const route = express.Router();
+
 
 // ROTA CLIENTES
-rota.get("/clientes",function(req,res){
+route.get("/clientes",function(req,res){
     const clientes = [
         {nome: "Ana Silva", cpf: "123.456.789-00", endereco: "Rua das Flores, 123, Bairro Jardim Primavera, Cidade Felicidade, Estado do Sonho, CEP: 12345-678"},
         {nome: "Pedro Almeida", cpf: "987.654.321-00", endereco: "Avenida Central, 456, Bairro Centro, Cidade Nova, Estado da Esperança, CEP: 98765-432"},
@@ -14,4 +16,4 @@ rota.get("/clientes",function(req,res){
     })
 })
 
-export default rota;
+export default route;

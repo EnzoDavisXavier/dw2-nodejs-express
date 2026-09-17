@@ -1,8 +1,9 @@
-import express from "express";
-const rota = express.Router()
+import express from 'express';
+
+const route = express.Router();
 
 // ROTA PEDIDOS
-rota.get("/pedidos",function(req,res){
+route.get("/pedidos",function(req,res){
     const pedidos = [
         {numero: "983721931", valor: 1200},
         {numero: "983721932", valor: 900},
@@ -14,4 +15,4 @@ rota.get("/pedidos",function(req,res){
     })
 })
 
-export default rota;
+export default route;

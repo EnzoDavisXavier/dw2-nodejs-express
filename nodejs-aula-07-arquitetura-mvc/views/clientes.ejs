@@ -1,23 +1,23 @@
-<%- include ('partials/header.ejs') %>
-<!-- Importando a navbar -->
+<%- include ('partials/header.ejs')%>
+
 <%- include ('partials/navbar.ejs') %>
-
-    <h4 style="text-align: center;">Página de Clientes</h4>
-
-    <!-- forEach dentro de TABELA -->
+    <a href="/"> << Voltar</a>
+    <br>
+    <h4 style="text-align: center;">Página Clientes</h4>
 
     <table border="1">
-      <tr>
-        <th width="150px">Cliente</th>
-        <th>CPF</th>
-      </tr>
-      <!-- forEach -->
-       <% clientes.forEach(cliente => { %>
-       <tr>
-          <td><%= cliente.nome %></td>
-          <td><%= cliente.cpf %></td>
-       </tr>
-       <% }) %>
-    </table>
 
+        <tr>
+           <th width="150px">Clientes</th>
+           <th>CPF</th>
+        </tr>
+
+        <% clientes.forEach(cliente => {%>
+            <tr>
+                <th><%= cliente.nome%></th>
+                <th><%= cliente.cpf%></th>
+            </tr>
+        <%})%>
+    </table>
+  
 <%- include ('partials/footer.ejs') %>
